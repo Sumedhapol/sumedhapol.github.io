@@ -1,0 +1,274 @@
+/*
+Name: Sumedha Gajanan Pol
+Student ID: XXXXXXXX
+Course: [Your Course Name]
+Assignment: CSS-Enhanced HTML5 Portfolio
+Submission Date: January 21, 2026
+Repository: https://github.com/yourusername/portfolio-project
+
+Description:
+Primary external stylesheet for the portfolio website.
+Handles layout, typography, color system, responsiveness,
+animations, forms, and tables.
+*/
+
+/* =====================================================
+   TABLE OF CONTENTS
+   1. CSS Reset & Base Rules
+   2. CSS Custom Properties (Design System)
+   3. Typography
+   4. Layout (Grid & Flexbox)
+   5. Header & Navigation
+   6. Main Content
+   7. Aside
+   8. Forms
+   9. Tables
+   10. Animations & Transitions
+   11. Media Queries (Responsive Design)
+===================================================== */
+
+
+/* ===============================
+   1. CSS RESET & BASE RULES
+================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-size: var(--fs-base);
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+
+/* ===============================
+   2. CSS CUSTOM PROPERTIES
+================================ */
+:root {
+  /* Colors */
+  --color-primary: #1f3a5f;
+  --color-secondary: #4d648d;
+  --color-accent: #e63946;
+  --color-bg: #f8f9fa;
+  --color-text: #1c1c1c;
+  --color-muted: #6c757d;
+
+  /* Typography */
+  --font-primary: 'Inter', Arial, sans-serif;
+  --font-mono: 'Courier New', monospace;
+
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-lg: 1.25rem;
+  --fs-xl: 1.75rem;
+
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+
+  /* UI */
+  --radius-sm: 6px;
+  --radius-lg: 12px;
+
+  --shadow-sm: 0 2px 6px rgba(0,0,0,0.1);
+  --shadow-lg: 0 10px 25px rgba(0,0,0,0.15);
+
+  --transition-fast: 0.2s ease-in-out;
+}
+
+
+/* ===============================
+   3. TYPOGRAPHY
+================================ */
+h1, h2, h3 {
+  color: var(--color-primary);
+  margin-bottom: var(--space-sm);
+}
+
+h1 {
+  font-size: var(--fs-xl);
+}
+
+h2 {
+  font-size: var(--fs-lg);
+}
+
+p {
+  margin-bottom: var(--space-md);
+}
+
+code {
+  font-family: var(--font-mono);
+  background: #eee;
+  padding: 0.2rem 0.4rem;
+  border-radius: var(--radius-sm);
+}
+
+
+/* ===============================
+   4. LAYOUT (GRID & FLEXBOX)
+================================ */
+main {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: var(--space-lg);
+  padding: var(--space-lg);
+}
+
+
+/* ===============================
+   5. HEADER & NAVIGATION
+================================ */
+header {
+  text-align: center;
+  padding: var(--space-lg);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: white;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-lg);
+  list-style: none;
+  padding: var(--space-md);
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--color-primary);
+  font-weight: bold;
+  transition: color var(--transition-fast);
+}
+
+nav a:hover {
+  color: var(--color-accent);
+}
+
+
+/* ===============================
+   6. MAIN CONTENT
+================================ */
+section {
+  margin-bottom: var(--space-lg);
+}
+
+article {
+  background: white;
+  padding: var(--space-md);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: var(--space-md);
+}
+
+
+/* ===============================
+   7. ASIDE
+================================ */
+aside {
+  background: white;
+  padding: var(--space-md);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+
+/* ===============================
+   8. FORMS
+================================ */
+form label {
+  font-weight: bold;
+}
+
+input, textarea {
+  width: 100%;
+  padding: var(--space-sm);
+  margin-bottom: var(--space-md);
+  border-radius: var(--radius-sm);
+  border: 1px solid #ccc;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+
+button {
+  background-color: var(--color-primary);
+  color: white;
+  padding: var(--space-sm) var(--space-md);
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+button:hover {
+  background-color: var(--color-accent);
+}
+
+
+/* ===============================
+   9. TABLES
+================================ */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: var(--color-secondary);
+  color: white;
+}
+
+th, td {
+  padding: var(--space-sm);
+  border: 1px solid #ddd;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f1f1f1;
+}
+
+tbody tr:hover {
+  background-color: #e9ecef;
+}
+
+
+/* ===============================
+   10. ANIMATIONS
+================================ */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+article {
+  animation: fadeIn 0.6s ease-in;
+}
+
+
+/* ===============================
+   11. MEDIA QUERIES
+================================ */
+@media (max-width: 1024px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+}

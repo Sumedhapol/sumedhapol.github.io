@@ -1,36 +1,38 @@
 /*
 Name: Sumedha Pol
-Course: Web Development
+Course: IST 256
 Assignment: DOM Portfolio Enhancements
-Date: 2026
-GitHub Pages: https://sumedhapol.github.io/
 */
 
-// Wait for page to fully load
-document.addEventListener("DOMContentLoaded", function () {
+// Wait until page loads
+document.addEventListener("DOMContentLoaded", () => {
 
   function setupToggle(buttonId, sectionId) {
     const button = document.getElementById(buttonId);
     const section = document.getElementById(sectionId);
 
-    if (!button || !section) return;
+    if (!button || !section) {
+      console.log("Missing:", buttonId, sectionId);
+      return;
+    }
 
     button.addEventListener("click", () => {
       section.classList.toggle("hidden");
     });
   }
 
-  setupToggle("toggleAbout", "aboutSection");
-  setupToggle("toggleSkills", "skillsSection");
-  setupToggle("toggleProjects", "projectsSection");
-  setupToggle("toggleContact", "contactSection");
+  // Connect buttons to sections
+  setupToggle("toggle-about", "about");
+  setupToggle("toggle-skills", "skills");
+  setupToggle("toggle-projects", "projects");
+  setupToggle("toggle-contact", "contact");
 
 
-  // Form submission feedback
+  // Contact form feedback
   const form = document.querySelector("form");
 
   if (form) {
-    form.addEventListener("submit", function (e) {
+    form.addEventListener("submit", (e) => {
       e.preventDefault();
       alert("Thank you! Your message has been received.");
       form.reset();

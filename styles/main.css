@@ -249,3 +249,6 @@ article {
     align-items: center;
   }
 }
+.hidden {
+  display: none;
+}

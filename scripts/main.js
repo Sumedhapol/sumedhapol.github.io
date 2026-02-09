@@ -7,3 +7,10 @@ projectImg.addEventListener("mouseover", () => {
 projectImg.addEventListener("mouseout", () => {
   projectImg.style.transform = "scale(1)";
 });
+
+const skillsBtn = document.getElementById("toggle-skills");
+const skillsSection = document.getElementById("skills");
+
+skillsBtn.addEventListener("click", () => {
+  skillsSection.classList.toggle("hidden");
+});

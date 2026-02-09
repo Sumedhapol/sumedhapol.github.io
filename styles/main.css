@@ -1,13 +1,14 @@
 /*
-Name: Sumedha Gajanan Pol
-Course: [IST 256 - Web Development]
-Assignment: CSS-Enhanced HTML5 Portfolio
-Submission Date: Feb 1, 2026
-
+Name: Sumedha Pol
+Course: IST 256
+Assignment: Portfolio CSS Styling
+Description: Clean, responsive portfolio design inspired by modern student portfolios.
+*/
 
 /* ===============================
-   1. CSS RESET & BASE RULES
-================================ */
+   1. CSS RESET + GLOBAL SETTINGS
+================================= */
+
 *,
 *::before,
 *::after {
@@ -16,258 +17,249 @@ Submission Date: Feb 1, 2026
   padding: 0;
 }
 
-body {
-  font-family: var(--font-primary);
-  font-size: var(--fs-base);
-  line-height: 1.6;
-  color: var(--color-text);
-  background-color: var(--color-bg);
-}
-
-
-/* ===============================
-   2. CSS CUSTOM PROPERTIES
-================================ */
 :root {
-  /* Colors */
-  --color-primary: #1f3a5f;
-  --color-secondary: #4d648d;
-  --color-accent: #e63946;
-  --color-bg: #f8f9fa;
-  --color-text: #1c1c1c;
-  --color-muted: #6c757d;
+  --primary: #00274c;
+  --secondary: #0056b3;
+  --accent: #f4b400;
+  --light: #f8f9fa;
+  --dark: #1a1a1a;
 
-  /* Typography */
-  --font-primary: 'Inter', Arial, sans-serif;
-  --font-mono: 'Courier New', monospace;
+  --radius: 10px;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 
-  --fs-sm: 0.875rem;
-  --fs-base: 1rem;
-  --fs-lg: 1.25rem;
-  --fs-xl: 1.75rem;
-
-  /* Spacing */
-  --space-xs: 0.25rem;
-  --space-sm: 0.5rem;
-  --space-md: 1rem;
-  --space-lg: 2rem;
-
-  /* UI */
-  --radius-sm: 6px;
-  --radius-lg: 12px;
-
-  --shadow-sm: 0 2px 6px rgba(0,0,0,0.1);
-  --shadow-lg: 0 10px 25px rgba(0,0,0,0.15);
-
-  --transition-fast: 0.2s ease-in-out;
+  --font-main: "Segoe UI", Arial, sans-serif;
+  --max-width: 1100px;
 }
 
+body {
+  font-family: var(--font-main);
+  background: var(--light);
+  color: var(--dark);
+  line-height: 1.6;
+}
 
 /* ===============================
-   3. TYPOGRAPHY
-================================ */
-h1, h2, h3 {
-  color: var(--color-primary);
-  margin-bottom: var(--space-sm);
-}
+   2. HEADER
+================================= */
 
-h1 {
-  font-size: var(--fs-xl);
-}
-
-h2 {
-  font-size: var(--fs-lg);
-}
-
-p {
-  margin-bottom: var(--space-md);
-}
-
-code {
-  font-family: var(--font-mono);
-  background: #eee;
-  padding: 0.2rem 0.4rem;
-  border-radius: var(--radius-sm);
-}
-
-
-/* ===============================
-   4. LAYOUT (GRID & FLEXBOX)
-================================ */
-main {
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-  gap: var(--space-lg);
-  padding: var(--space-lg);
-}
-
-
-/* ===============================
-   5. HEADER & NAVIGATION
-================================ */
 header {
+  background: white;
   text-align: center;
-  padding: var(--space-lg);
-  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-  color: white;
+  padding: 2rem 1rem;
+  box-shadow: var(--shadow);
+}
+
+header img {
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+header h1 {
+  font-size: 2rem;
+  color: var(--primary);
+}
+
+header p {
+  color: #555;
+  margin-top: 0.25rem;
+}
+
+/* ===============================
+   3. NAVIGATION
+================================= */
+
+nav {
+  background: var(--primary);
 }
 
 nav ul {
   display: flex;
   justify-content: center;
-  gap: var(--space-lg);
   list-style: none;
-  padding: var(--space-md);
+  gap: 2rem;
+  padding: 1rem;
 }
 
 nav a {
+  color: white;
   text-decoration: none;
-  color: var(--color-primary);
-  font-weight: bold;
-  transition: color var(--transition-fast);
+  font-weight: 600;
+  transition: color 0.3s;
 }
 
 nav a:hover {
-  color: var(--color-accent);
+  color: var(--accent);
 }
-
 
 /* ===============================
-   6. MAIN CONTENT
-================================ */
-section {
-  margin-bottom: var(--space-lg);
+   4. TOGGLE BUTTONS
+================================= */
+
+.toggle-buttons {
+  text-align: center;
+  margin: 1.5rem 0;
 }
 
-article {
-  background: white;
-  padding: var(--space-md);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm);
-  margin-bottom: var(--space-md);
-}
-
-
-/* ===============================
-   7. ASIDE
-================================ */
-aside {
-  background: white;
-  padding: var(--space-md);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm);
-}
-
-
-/* ===============================
-   8. FORMS
-================================ */
-form label {
-  font-weight: bold;
-}
-
-input, textarea {
-  width: 100%;
-  padding: var(--space-sm);
-  margin-bottom: var(--space-md);
-  border-radius: var(--radius-sm);
-  border: 1px solid #ccc;
-}
-
-input:focus, textarea:focus {
-  outline: none;
-  border-color: var(--color-accent);
-}
-
-button {
-  background-color: var(--color-primary);
+.toggle-buttons button {
+  background: var(--primary);
   color: white;
-  padding: var(--space-sm) var(--space-md);
   border: none;
-  border-radius: var(--radius-sm);
+  padding: 10px 16px;
+  margin: 6px;
+  border-radius: var(--radius);
   cursor: pointer;
-  transition: background-color var(--transition-fast);
+  transition: background 0.3s, transform 0.15s;
 }
 
-button:hover {
-  background-color: var(--color-accent);
+.toggle-buttons button:hover {
+  background: var(--secondary);
+  transform: translateY(-2px);
 }
 
-
-/* ===============================
-   9. TABLES
-================================ */
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-thead {
-  background-color: var(--color-secondary);
-  color: white;
-}
-
-th, td {
-  padding: var(--space-sm);
-  border: 1px solid #ddd;
-}
-
-tbody tr:nth-child(even) {
-  background-color: #f1f1f1;
-}
-
-tbody tr:hover {
-  background-color: #e9ecef;
-}
-
-
-/* ===============================
-   10. ANIMATIONS
-================================ */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-article {
-  animation: fadeIn 0.6s ease-in;
-}
-
-
-/* ===============================
-   11. MEDIA QUERIES
-================================ */
-@media (max-width: 1024px) {
-  main {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
-}
+/* Hidden class for DOM toggling */
 .hidden {
   display: none;
 }
 
-.toggle-buttons {
-  text-align: center;
-  margin: 20px 0;
+/* ===============================
+   5. MAIN LAYOUT
+================================= */
+
+main {
+  max-width: var(--max-width);
+  margin: 2rem auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  padding: 0 1rem;
 }
 
-.toggle-buttons button {
-  margin: 5px;
-  padding: 10px 15px;
-  border: none;
-  background: #00274c;
+section {
+  background: white;
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 1.5rem;
+}
+
+section h2 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+/* ===============================
+   6. TABLE STYLING
+================================= */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+th,
+td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background: var(--primary);
   color: white;
-  border-radius: 6px;
+  text-align: left;
+}
+
+tbody tr:nth-child(even) {
+  background: #f2f2f2;
+}
+
+/* ===============================
+   7. PROJECT IMAGE
+================================= */
+
+figure {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+figure img {
+  max-width: 100%;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+figcaption {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 0.5rem;
+}
+
+/* ===============================
+   8. FORM STYLING
+================================= */
+
+form {
+  margin-top: 1rem;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 12px;
+  border-radius: var(--radius);
+  border: 1px solid #ccc;
+}
+
+button[type="submit"] {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: var(--radius);
   cursor: pointer;
 }
 
-.toggle-buttons button:hover {
-  background: #0056b3;
+button[type="submit"]:hover {
+  background: var(--secondary);
+}
+
+/* ===============================
+   9. ASIDE
+================================= */
+
+aside {
+  background: white;
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  height: fit-content;
+}
+
+/* ===============================
+   10. FOOTER
+================================= */
+
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: var(--primary);
+  color: white;
+  margin-top: 2rem;
+}
+
+/* ===============================
+   11. RESPONSIVE DESIGN
+================================= */
+
+@media (max-width: 900px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
 }

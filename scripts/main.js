@@ -1,63 +1,40 @@
+/*
+Name: Sumedha Pol
+Course: Web Development
+Assignment: DOM Portfolio Enhancements
+Date: 2026
+GitHub Pages: https://sumedhapol.github.io/
+*/
 
-// ===============================
-// Confirm JavaScript is connected
-// ===============================
-console.log("JavaScript connected successfully.");
+// Wait for page to fully load
+document.addEventListener("DOMContentLoaded", function () {
 
+  function setupToggle(buttonId, sectionId) {
+    const button = document.getElementById(buttonId);
+    const section = document.getElementById(sectionId);
 
-// ===============================
-// Hover effect on featured project image
-// ===============================
-const projectImg = document.querySelector(".project-img");
+    if (!button || !section) return;
 
-if (projectImg) {
-  projectImg.addEventListener("mouseover", () => {
-    projectImg.style.transform = "scale(1.05)";
-    projectImg.style.transition = "0.3s ease";
-  });
-
-  projectImg.addEventListener("mouseout", () => {
-    projectImg.style.transform = "scale(1)";
-  });
-}
-
-
-// ===============================
-// Reusable function to toggle sections
-// (This satisfies the refactor requirement)
-// ===============================
-function toggleSection(buttonId, sectionId) {
-  const button = document.getElementById(buttonId);
-  const section = document.getElementById(sectionId);
-
-  if (button && section) {
     button.addEventListener("click", () => {
       section.classList.toggle("hidden");
     });
   }
-}
+
+  setupToggle("toggleAbout", "aboutSection");
+  setupToggle("toggleSkills", "skillsSection");
+  setupToggle("toggleProjects", "projectsSection");
+  setupToggle("toggleContact", "contactSection");
 
 
-// ===============================
-// Apply toggle behavior to sections
-// ===============================
-toggleSection("toggle-skills", "skills");
-toggleSection("toggle-about", "about");
-toggleSection("toggle-projects", "projects");
-toggleSection("toggle-contact", "contact");
+  // Form submission feedback
+  const form = document.querySelector("form");
 
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      alert("Thank you! Your message has been received.");
+      form.reset();
+    });
+  }
 
-// ===============================
-// Handle contact form submission
-// ===============================
-const contactForm = document.querySelector("form");
-
-if (contactForm) {
-  contactForm.addEventListener("submit", (event) => {
-    event.preventDefault(); // stop page refresh
-
-    alert("Thank you! Your message has been sent successfully.");
-
-    contactForm.reset(); // clear form fields
-  });
-}
+});

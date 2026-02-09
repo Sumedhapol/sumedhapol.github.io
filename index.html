@@ -7,19 +7,7 @@ Assignment: ASG-L2: LIVE Portfolio Page Assignment
 
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" href="styles/main.css">
-<script src="main.js"></script>
-<button id="toggle-skills">Toggle Skills</button>
-<button id="toggle-about">Show/Hide About</button>
 
-<section id="about">
-  <!-- about content -->
-</section>
-<button id="toggle-projects">Show/Hide Projects</button>
-
-<section id="projects">
-  <!-- project content -->
-</section>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,6 +17,10 @@ Assignment: ASG-L2: LIVE Portfolio Page Assignment
 
   <title>Sumedha Pol | Information Technology Student Portfolio</title>
 
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles/main.css">
+
+  <!-- Internal CSS -->
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -57,6 +49,30 @@ Assignment: ASG-L2: LIVE Portfolio Page Assignment
     nav a {
       text-decoration: none;
       font-weight: bold;
+    }
+
+    /* Toggle buttons styling */
+    .toggle-buttons {
+      text-align: center;
+      margin: 15px 0;
+    }
+
+    .toggle-buttons button {
+      margin: 5px;
+      padding: 8px 14px;
+      border: none;
+      background-color: #00274c;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .toggle-buttons button:hover {
+      background-color: #0056b3;
+    }
+
+    .hidden {
+      display: none;
     }
 
     main {
@@ -97,11 +113,7 @@ Assignment: ASG-L2: LIVE Portfolio Page Assignment
 <body>
 
 <header>
-  <img src="IMG_0924.jpg"
-       alt="Professional headshot of Sumedha Pol"
-       width="150"
-       height="150">
-
+  <img src="IMG_0924.jpg" alt="Professional headshot of Sumedha Pol" width="150" height="150">
   <h1>Sumedha Gajanan Pol</h1>
   <p><em>Information Technology Student | Application Developer | Research Assistant</em></p>
 </header>
@@ -115,6 +127,13 @@ Assignment: ASG-L2: LIVE Portfolio Page Assignment
   </ul>
 </nav>
 
+<!-- ✅ TOGGLE BUTTONS (correct location) -->
+<div class="toggle-buttons">
+  <button id="toggle-about">Show/Hide About</button>
+  <button id="toggle-skills">Show/Hide Skills</button>
+  <button id="toggle-projects">Show/Hide Projects</button>
+  <button id="toggle-contact">Show/Hide Contact</button>
+</div>
 
 <main>
 
@@ -137,16 +156,13 @@ Assignment: ASG-L2: LIVE Portfolio Page Assignment
         <h3>My Goals</h3>
         <p>
           My goal is to build a career that blends technology, security,
-          and real-world impact. I am particularly interested in applying
-          technical skills to training, infrastructure, and problem-solving
-          environments.
+          and real-world impact.
         </p>
       </article>
     </section>
 
     <section id="skills">
       <h2>My Skills</h2>
-
       <ul>
         <li>Application Development</li>
         <li>Networking & Telecommunications</li>
@@ -154,78 +170,14 @@ Assignment: ASG-L2: LIVE Portfolio Page Assignment
         <li>Research & Data Analysis</li>
         <li>Technical Documentation</li>
       </ul>
-
-      <table>
-        <caption>Technical Skill Proficiency</caption>
-        <thead>
-          <tr>
-            <th scope="col">Technology</th>
-            <th scope="col">Experience Level</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">Unity & C#</th>
-            <td>Beginneir</td>
-          </tr>
-          <tr>
-            <th scope="row">Java</th>
-            <td>Intermediate</td>
-          </tr>
-          <tr>
-            <th scope="row">SQL / MySQL</th>
-            <td>Beginneir</td>
-          </tr>
-          <tr>
-            <th scope="row">Networking</th>
-            <td>Intermediate</td>
-          </tr>
-        </tbody>
-      </table>
     </section>
 
     <section id="projects">
       <h2>Projects & Experience</h2>
-
       <article>
         <h3>Immersive VR Cyberbullying Training</h3>
-        <p>
-          As an <strong>Application Developer</strong>, I configured
-          Meta Quest 3 hardware and developed immersive Unity-based
-          VR experiences for a
-          <em>U.S. Bureau of Justice Administration–funded project</em>.
-          These simulations will help train students and school personnel on handling cyberbullying
-          scenarios.
-        </p>
+        <p>Developed Unity-based VR simulations for cyberbullying response training.</p>
       </article>
-
-      <article>
-        <h3>Comprehensive Networking Proposal</h3>
-        <p>
-          I led a team in designing a hybrid <strong>Gigabit broadband and Wi-Fi 6</strong>
-          network for a statewide sports competition. The proposal addressed
-          live streaming infrastructure, CDN integration, budgeting, and
-          risk mitigation strategies.
-        </p>
-      </article>
-
-      <figure>
-        <img src="220diagram.png"
-             alt="Diagram representing a hybrid networking infrastructure project"
-             width="300"
-             height="200"
-             loading="lazy">
-        <figcaption>Hybrid network and live streaming infrastructure project</figcaption>
-      </figure>
-
-      <details>
-        <summary>Additional Experience</summary>
-        <p>
-          I also worked as a <em>Research Assistant</em> in the Busse Lab, where I
-          helped design UV disinfection flow systems and analyzed experimental
-          data for sustainable water treatment applications.
-        </p>
-      </details>
     </section>
 
     <section id="contact">
@@ -247,44 +199,13 @@ Assignment: ASG-L2: LIVE Portfolio Page Assignment
           <button type="submit">Submit</button>
         </fieldset>
       </form>
-
-      <p>
-        Email: <a href="mailto:smp6989@psu.edu">smp6989@psu.edu</a><br>
-        Phone: <a href="tel:+14847191720">(484) 719-1720</a>
-      </p>
-      <p>
-        <a href="resume.docx.pdf" download>
-          Download My Resume (PDF)
-        </a>
-      </p>
     </section>
 
   </div>
 
   <aside>
     <h2>Quick Facts</h2>
-
-    <dl>
-      <dt>University</dt>
-      <dd>Penn State Lehigh Valley</dd>
-
-      <dt>Major</dt>
-      <dd>Information Technology</dd>
-
-      <dt>Minor</dt>
-      <dd>Security and Risk Analysis</dd>
-
-      <dt>Anticipated Graduation</dt>
-      <dd><time datetime="2027-05">May 2027</time></dd>
-
-      <dt>Honors</dt>
-      <dd>Dean’s List (Spring, Summer, Fall 2025)</dd>
-
-      <dt>Publications & Conferences</dt>
-      <dd>CCSC Eastern Conference, Oct 2025 Arcadia University</dd>
-      <dd>SIGCSE TG Conference, Feb 2026 St. Louis, Missouri</dd>
-    </dl>
-
+    <p>Information Technology major at Penn State Lehigh Valley.</p>
   </aside>
 
 </main>
@@ -292,6 +213,9 @@ Assignment: ASG-L2: LIVE Portfolio Page Assignment
 <footer>
   <p>&copy; 2026 Sumedha Gajanan Pol</p>
 </footer>
+
+<!-- ✅ JavaScript MUST be here -->
+<script src="main.js"></script>
 
 </body>
 </html>

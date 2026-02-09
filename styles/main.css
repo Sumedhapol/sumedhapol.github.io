@@ -252,3 +252,22 @@ article {
 .hidden {
   display: none;
 }
+
+.toggle-buttons {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.toggle-buttons button {
+  margin: 5px;
+  padding: 10px 15px;
+  border: none;
+  background: #00274c;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.toggle-buttons button:hover {
+  background: #0056b3;
+}

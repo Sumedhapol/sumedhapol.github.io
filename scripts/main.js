@@ -14,3 +14,12 @@ const skillsSection = document.getElementById("skills");
 skillsBtn.addEventListener("click", () => {
   skillsSection.classList.toggle("hidden");
 });
+
+const aboutBtn = document.getElementById("toggle-about");
+const aboutSection = document.getElementById("about");
+
+if (aboutBtn && aboutSection) {
+  aboutBtn.addEventListener("click", () => {
+    aboutSection.classList.toggle("hidden");
+  });
+}

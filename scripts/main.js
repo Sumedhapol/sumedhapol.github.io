@@ -1,42 +1,71 @@
 /*
-Name: Sumedha Pol
-Course: IST 256
-Assignment: DOM Portfolio Enhancements
+Name: Sumedha Gajanan Pol
+Student ID: XXXXXXXX
+Course: [Your Course Name]
+Assignment: DOM Portfolio Interactivity
+Submission Date: [Add Date]
+GitHub Pages URL: https://sumedhapol.github.io/
 */
 
-// Wait until page loads
-document.addEventListener("DOMContentLoaded", () => {
+// ===============================
+// Confirm JavaScript is connected
+// ===============================
+console.log("JavaScript connected successfully.");
 
-  function setupToggle(buttonId, sectionId) {
-    const button = document.getElementById(buttonId);
-    const section = document.getElementById(sectionId);
 
-    if (!button || !section) {
-      console.log("Missing:", buttonId, sectionId);
-      return;
-    }
+// ===============================
+// Hover effect on featured project image
+// ===============================
+const projectImg = document.querySelector(".project-img");
 
+if (projectImg) {
+  projectImg.addEventListener("mouseover", () => {
+    projectImg.style.transform = "scale(1.05)";
+    projectImg.style.transition = "0.3s ease";
+  });
+
+  projectImg.addEventListener("mouseout", () => {
+    projectImg.style.transform = "scale(1)";
+  });
+}
+
+
+// ===============================
+// Reusable function to toggle sections
+// (This satisfies the refactor requirement)
+// ===============================
+function toggleSection(buttonId, sectionId) {
+  const button = document.getElementById(buttonId);
+  const section = document.getElementById(sectionId);
+
+  if (button && section) {
     button.addEventListener("click", () => {
       section.classList.toggle("hidden");
     });
   }
-
-  // Connect buttons to sections
-  setupToggle("toggle-about", "about");
-  setupToggle("toggle-skills", "skills");
-  setupToggle("toggle-projects", "projects");
-  setupToggle("toggle-contact", "contact");
+}
 
 
-  // Contact form feedback
-  const form = document.querySelector("form");
+// ===============================
+// Apply toggle behavior to sections
+// ===============================
+toggleSection("toggle-skills", "skills");
+toggleSection("toggle-about", "about");
+toggleSection("toggle-projects", "projects");
+toggleSection("toggle-contact", "contact");
 
-  if (form) {
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      alert("Thank you! Your message has been received.");
-      form.reset();
-    });
-  }
 
-});
+// ===============================
+// Handle contact form submission
+// ===============================
+const contactForm = document.querySelector("form");
+
+if (contactForm) {
+  contactForm.addEventListener("submit", (event) => {
+    event.preventDefault(); // stop page refresh
+
+    alert("Thank you! Your message has been sent successfully.");
+
+    contactForm.reset(); // clear form fields
+  });
+}

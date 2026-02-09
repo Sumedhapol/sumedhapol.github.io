@@ -23,3 +23,11 @@ if (aboutBtn && aboutSection) {
     aboutSection.classList.toggle("hidden");
   });
 }
+const projectsBtn = document.getElementById("toggle-projects");
+const projectsSection = document.getElementById("projects");
+
+if (projectsBtn && projectsSection) {
+  projectsBtn.addEventListener("click", () => {
+    projectsSection.classList.toggle("hidden");
+  });
+}
